@@ -14,8 +14,14 @@ public class main extends JavaPlugin {
 		main = this;
 		getCommands();
 		getAPIS();
+		sendEnable();
 	}
 	
+	private void sendEnable() {
+		enableTile.sendWelcome("PardoesCore", "Enabled", 200, 100, 200);
+		
+	}
+
 	private void getAPIS() {
 		PluginManager plm = this.getServer().getPluginManager();
 		plm.registerEvents(new enableTile(), this);
