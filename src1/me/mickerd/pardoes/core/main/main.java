@@ -2,6 +2,7 @@ package me.mickerd.pardoes.core.main;
 
 import me.mickerd.pardoes.core.apis.tile.enableTile;
 import me.mickerd.pardoes.core.commands.PC;
+import me.mickerd.pardoes.core.main.helpers.Friend;
 
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -15,6 +16,7 @@ public class main extends JavaPlugin {
 		getCommands();
 		getAPIS();
 		sendEnable();
+		Friend.saveConfigs();
 	}
 	
 	private void sendEnable() {
