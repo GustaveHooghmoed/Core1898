@@ -9,7 +9,9 @@ public class PC implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command label, String cmnd,
 			String[] args) {
-		// TODO Auto-generated method stub
+		if(args[0].equalsIgnoreCase("tile")){
+			
+		}
 		return false;
 	}
 
