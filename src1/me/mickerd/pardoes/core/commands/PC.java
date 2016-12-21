@@ -28,9 +28,11 @@ public class PC implements CommandExecutor {
 					sender.sendMessage(prefix.getM("You cant use this command!"));
 				}
 				// /vriend nieuw {naam}
-		    } else if(args[1].equalsIgnoreCase("add")){
+		    } else if(args[1].equalsIgnoreCase("nieuw")){
 		    	Friend.addFriend(sender.getName(),args[2]);
-		    }
+		    	// /vriend verwijderen {naam}
+		    } } else if(args[1].equalsIgnoreCase("verwijderen")){
+		    	Friend.delFriend(sender.getName(),args[2]);
 	}
 		return false;
 

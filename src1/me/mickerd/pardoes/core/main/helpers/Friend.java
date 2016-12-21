@@ -34,6 +34,26 @@ public class Friend {
 			  prefix.getM("De volgende speler staat al op je vriendenlijst : " + string);
 		  }
 	}
+	
+	public static void delFriend(String friendsname, String playername){
+		Player friend = Bukkit.getPlayer(friendsname);
+		Player player = Bukkit.getPlayer(playername);
+		 List<String> friendList = main.rm().getConfig().getStringList(playername); // Gets list of friends
+		 if (main.rm().getConfig().get(friendsname) == null) {
+             player.sendMessage(prefix.getM("Sorry! Deze speler is geen vriend van je!"));
+		 }
+		 List<String> targetFriendsList = main.rm().getConfig().getStringList(friendsname);
+		 if (friendList.contains(friendsname)) {
+			 friendList.remove(friendsname);
+			 main.rm().getConfig().set(player.getName(), friendList); // Sets new list with removed friend
+             targetFriendsList.remove(player.getName());
+             main.rm().getConfig().set(friendsname, targetFriendsList);
+             main.rm().saveConfig();
+             return;
+		 } else {
+			 player.sendMessage(prefix.getM("Speler, " + friendsname + " is niet op je vriendenlijst."));
+		 }
+	}
 
 	public static void saveConfigs() {
 		main.rm().saveConfig();
