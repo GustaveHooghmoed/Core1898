@@ -31,7 +31,7 @@ public class main extends JavaPlugin {
 		main = null;
 	}
 
-	public Plugin rm() {
+	public static Plugin rm() {
 		return main;
 	}
 	
