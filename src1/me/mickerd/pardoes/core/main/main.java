@@ -5,6 +5,7 @@ import me.mickerd.pardoes.core.commands.PC;
 import me.mickerd.pardoes.core.commands.SocialSpyPC;
 import me.mickerd.pardoes.core.commands.Verwonder;
 import me.mickerd.pardoes.core.commands.Warps;
+import me.mickerd.pardoes.core.events.dontWarpATR;
 import me.mickerd.pardoes.core.main.helpers.Friend;
 
 import org.bukkit.Bukkit;
@@ -29,6 +30,7 @@ public class main extends JavaPlugin {
 	private void RegisterEvents() {
 		PluginManager plm = this.getServer().getPluginManager();
 		plm.registerEvents(new SocialSpyPC(), this);
+		plm.registerEvents(new dontWarpATR(), this);
 	}
 
 	private void sendEnable() {
