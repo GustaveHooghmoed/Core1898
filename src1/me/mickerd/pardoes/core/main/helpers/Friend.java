@@ -51,7 +51,7 @@ public class Friend {
              main.rm().saveConfig();
              return;
 		 } else {
-			 player.sendMessage(prefix.getM("Speler, " + friendsname + " is niet op je vriendenlijst."));
+			 player.sendMessage(prefix.getM("Sorry! Deze speler is geen vriend van je!"));
 		 }
 	}
 
