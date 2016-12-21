@@ -30,6 +30,8 @@ public class Friend {
 			  Player Sender = Bukkit.getPlayer(name);
 			  Sender.sendMessage(prefix.getM("Je kunt jezelf niet toevoegen!"));
 		  }
+		  } else {
+			  prefix.getM("De volgende speler staat al op je vriendenlijst: " + string);
 		  }
 	}
 
