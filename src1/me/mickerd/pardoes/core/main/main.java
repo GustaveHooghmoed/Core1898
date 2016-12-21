@@ -18,7 +18,7 @@ public class main extends JavaPlugin {
 	}
 	
 	private void sendEnable() {
-		enableTile.sendWelcome("PardoesCore", "Enabled", 200, 100, 200);
+		enableTile.sendWelcome("Pardoes-Core", "Enabled", 200, 100, 200);
 		
 	}
 
