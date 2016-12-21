@@ -2,6 +2,7 @@ package me.mickerd.pardoes.core.main;
 
 import me.mickerd.pardoes.core.apis.tile.enableTile;
 import me.mickerd.pardoes.core.commands.PC;
+import me.mickerd.pardoes.core.commands.Verwonder;
 import me.mickerd.pardoes.core.main.helpers.Friend;
 
 import org.bukkit.plugin.Plugin;
@@ -32,7 +33,7 @@ public class main extends JavaPlugin {
 	private void getCommands() {
 		
 		getCommand("pc").setExecutor(new PC());
-		
+		getCommand("verwonder").setExecutor(new Verwonder());
 	}
 
 	public void onDisable(){
