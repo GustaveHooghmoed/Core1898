@@ -16,7 +16,7 @@ public class dontWarpATR implements Listener {
 	    if (p.isInsideVehicle()) {
 	      if(p.isOp() == false){
 	      e.setCancelled(true);
-	      e.getPlayer().sendMessage(prefix.getM("Je kunt niet warpen in een attractie!"));
+	      e.getPlayer().sendMessage(prefix.getM("Niet toegestaan in een attractie!"));
 	    } else {
 	    	e.setCancelled(false);
 	    }
