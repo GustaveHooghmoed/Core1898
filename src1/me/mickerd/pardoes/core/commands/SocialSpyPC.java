@@ -3,6 +3,8 @@ package me.mickerd.pardoes.core.commands;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,7 +27,7 @@ public class SocialSpyPC implements CommandExecutor, Listener {
 				String toggleMessage= prefix.getM("SocialSPY aangezet");
 				sender.sendMessage(toggleMessage);
 				socialSpy.add(s.getUniqueId());
-			} else if(args[1].equalsIgnoreCase("on")){
+			} else if(args[1].equalsIgnoreCase("off")){
 				Player s = (Player) sender;
 				String toggleMessage= prefix.getM("SocialSPY uitgezet");
 				sender.sendMessage(toggleMessage);
@@ -44,7 +46,13 @@ public class SocialSpyPC implements CommandExecutor, Listener {
 public void onPlayerCommandPreprocessEvent(PlayerCommandPreprocessEvent event) {
 	  Player p = event.getPlayer();
 	  if (event.getMessage().contains("/")) {
-		  
+		  for(Player online : Bukkit.getOnlinePlayers()){
+			  if(socialSpy.contains(online.getUniqueId())){
+				  if(online.isOp()){
+					  online.sendMessage(ChatColor.DARK_GRAY + "CommandSpy > " + p.getName() + " > " + event.getMessage());
+				  }
+			  }
+		  }
 		  
 	  }
 
