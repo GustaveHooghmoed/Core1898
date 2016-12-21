@@ -2,6 +2,7 @@ package me.mickerd.pardoes.core.main;
 
 import me.mickerd.pardoes.core.apis.tile.enableTile;
 import me.mickerd.pardoes.core.commands.PC;
+import me.mickerd.pardoes.core.commands.SocialSpyPC;
 import me.mickerd.pardoes.core.commands.Verwonder;
 import me.mickerd.pardoes.core.commands.Warps;
 import me.mickerd.pardoes.core.main.helpers.Friend;
@@ -22,8 +23,14 @@ public class main extends JavaPlugin {
 		getAPIS();
 		sendEnable();
 		Friend.saveConfigs();
+		RegisterEvents();
 	}
 	
+	private void RegisterEvents() {
+		PluginManager plm = this.getServer().getPluginManager();
+		plm.registerEvents(new SocialSpyPC(), this);
+	}
+
 	private void sendEnable() {
 		enableTile.sendWelcome("Pardoes-Core", "Enabled", 200, 100, 200);
 		
@@ -46,6 +53,7 @@ public class main extends JavaPlugin {
 		getCommand("pc").setExecutor(new PC());
 		getCommand("verwonder").setExecutor(new Verwonder());
 		getCommand("warp").setExecutor(new Warps());
+		getCommand("socialspy").setExecutor(new SocialSpyPC());
 	}
 
 	public void onDisable(){
