@@ -6,6 +6,7 @@ import me.mickerd.pardoes.core.commands.PC;
 import me.mickerd.pardoes.core.commands.SocialSpyPC;
 import me.mickerd.pardoes.core.commands.Verwonder;
 import me.mickerd.pardoes.core.commands.Warps;
+import me.mickerd.pardoes.core.commands.title;
 import me.mickerd.pardoes.core.events.dontWarpATR;
 import me.mickerd.pardoes.core.main.helpers.Friend;
 
@@ -57,6 +58,7 @@ public class main extends JavaPlugin {
 		getCommand("verwonder").setExecutor(new Verwonder());
 		getCommand("warp").setExecutor(new Warps());
 		getCommand("socialspy").setExecutor(new SocialSpyPC());
+		getCommand("title").setExecutor(new title());
 	}
 
 	public void onDisable(){
