@@ -1,4 +1,4 @@
-package me.mickerd.pardoes.core.attracties;
+package me.mickerd.pardoes.core.attracties.villa;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
