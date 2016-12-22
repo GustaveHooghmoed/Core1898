@@ -9,7 +9,7 @@ public class startVilla implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command label, String cmnd,
 			String[] args) {
-		if(args[0].equalsIgnoreCase("start")){
+		if(args[0].equalsIgnoreCase("spawn")){
 			VillaMain.spawn();
 		}
 		if(args[0].equalsIgnoreCase("stop")){
