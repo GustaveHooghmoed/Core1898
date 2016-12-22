@@ -47,7 +47,6 @@ public void onPlayerCommandPreprocessEvent(PlayerCommandPreprocessEvent event) {
 	  Player p = event.getPlayer();
 	  if (event.getMessage().contains("/")) {
 		  for(Player online : Bukkit.getOnlinePlayers()){
-			  if(socialSpy.contains(online.getUniqueId())){
 				  if(online.isOp()){
 					  online.sendMessage(ChatColor.DARK_GRAY + "CommandSpy > " + p.getName() + " > " + event.getMessage());
 				  }
@@ -56,5 +55,4 @@ public void onPlayerCommandPreprocessEvent(PlayerCommandPreprocessEvent event) {
 		  
 	  }
 
-}
 }

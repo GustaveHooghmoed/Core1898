@@ -11,9 +11,8 @@ public class title implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command label, String cmnd,
 			String[] args) {
-		String[] message = args[0].split(" ");
-		String messageend = message.toString();
-		enableTile.sendWelcome(prefix.getM(""), messageend, Integer.valueOf(args[2]), Integer.valueOf(args[3]), Integer.valueOf(args[4]));
+		String messageend = args[0];
+		enableTile.sendWelcome(prefix.getM(""), messageend, Integer.valueOf(args[1]), Integer.valueOf(args[2]), Integer.valueOf(args[3]));
 				return false;
 		
 	}
