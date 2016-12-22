@@ -1,5 +1,6 @@
 package me.mickerd.pardoes.core.main;
 
+import me.mcikerd.pardoes.core.villa.startVilla;
 import me.mickerd.pardoes.core.apis.tile.enableTile;
 import me.mickerd.pardoes.core.commands.PC;
 import me.mickerd.pardoes.core.commands.SocialSpyPC;
@@ -51,7 +52,7 @@ public class main extends JavaPlugin {
 	}
 
 	private void getCommands() {
-		
+		getCommand("villa").setExecutor(new startVilla());
 		getCommand("pc").setExecutor(new PC());
 		getCommand("verwonder").setExecutor(new Verwonder());
 		getCommand("warp").setExecutor(new Warps());
