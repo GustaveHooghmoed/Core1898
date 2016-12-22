@@ -1,7 +1,7 @@
 package me.mickerd.pardoes.core.main;
 
 import me.mickerd.pardoes.core.apis.tile.enableTile;
-import me.mickerd.pardoes.core.attracites.villa.startVilla;
+import me.mickerd.pardoes.core.attracties.startVilla;
 import me.mickerd.pardoes.core.commands.PC;
 import me.mickerd.pardoes.core.commands.SocialSpyPC;
 import me.mickerd.pardoes.core.commands.Verwonder;
