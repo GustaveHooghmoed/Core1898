@@ -1,4 +1,4 @@
-package me.mcikerd.pardoes.core.villa;
+package me.mickerd.pardoes.core.attracites.villa;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
