@@ -1,35 +1,28 @@
 package me.mickerd.pardoes.core.attracties.mc;
 
-import org.bukkit.event.Listener;
-
-	import java.util.ArrayList;
-	import me.CaptainXan.Helpers.CartListener;
-	import me.CaptainXan.Helpers.GetEntity;
-	import me.CaptainXan.Helpers.Rotation;
-	import me.CaptainXan.Helpers.Vectors;
-	import me.CaptainXan.SOMCore.Main.Main;
-import me.mickerd.pardoes.core.main.main;
+import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-	import org.bukkit.Location;
-	import org.bukkit.Material;
-	import org.bukkit.Server;
-	import org.bukkit.World;
-	import org.bukkit.block.Block;
-	import org.bukkit.block.Sign;
-	import org.bukkit.craftbukkit.v1_10_R1.entity.CraftEntity;
-	import org.bukkit.entity.ArmorStand;
-	import org.bukkit.entity.EntityType;
-	import org.bukkit.entity.Minecart;
-	import org.bukkit.scheduler.BukkitRunnable;
-	import org.bukkit.scheduler.BukkitScheduler;
-	import org.bukkit.util.Vector;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.Sign;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftEntity;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Minecart;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.Vector;
+
+import me.mickerd.pardoes.core.main.main;
+import me.mickerd.pardoes.core.main.helpers.CartListener;
+import me.mickerd.pardoes.core.main.helpers.Rotation;
 
 	public class MonsieurCanniballe
 	{
-	  public static Location center = Bukkit.getWorld("world").getBlockAt(405, 87, 82).getLocation().add(0.5D, 0.0D, 0.5D);
-	  public static Block gates = Bukkit.getWorld("world").getBlockAt(414, 84, 82);
-	  public static Block gates2 = Bukkit.getWorld("world").getBlockAt(405, 84, 75);
+	  public static Location center = Bukkit.getWorld("park").getBlockAt(405, 87, 82).getLocation().add(0.5D, 0.0D, 0.5D);
+	  public static Block gates = Bukkit.getWorld("park").getBlockAt(414, 84, 82);
+	  public static Block gates2 = Bukkit.getWorld("park").getBlockAt(405, 84, 75);
 	  public static ArrayList<ArmorStand> cup1 = new ArrayList();
 	  public static ArrayList<ArmorStand> cup2 = new ArrayList();
 	  public static ArrayList<ArmorStand> cup3 = new ArrayList();
@@ -50,8 +43,8 @@ import org.bukkit.Bukkit;
 	  public static void openRide()
 	  {
 	    started = true;
-	    Sign ssign = (Sign)Bukkit.getWorld("world").getBlockAt(416, 95, 96).getState();
-	    Sign stsign = (Sign)Bukkit.getWorld("world").getBlockAt(414, 95, 98).getState();
+	    Sign ssign = (Sign)Bukkit.getWorld("park").getBlockAt(416, 95, 96).getState();
+	    Sign stsign = (Sign)Bukkit.getWorld("park").getBlockAt(414, 95, 98).getState();
 	    gates2.setType(Material.REDSTONE_BLOCK);
 	    stsign.setLine(2, "�2Open");
 	    stsign.update();
@@ -82,8 +75,8 @@ import org.bukkit.Bukkit;
 	    started = true;
 	    gates.setType(Material.REDSTONE_BLOCK);
 	    gates2.setType(Material.REDSTONE_BLOCK);
-	    Sign ssign = (Sign)Bukkit.getWorld("world").getBlockAt(416, 95, 96).getState();
-	    Sign stsign = (Sign)Bukkit.getWorld("world").getBlockAt(414, 95, 98).getState();
+	    Sign ssign = (Sign)Bukkit.getWorld("park").getBlockAt(416, 95, 96).getState();
+	    Sign stsign = (Sign)Bukkit.getWorld("park").getBlockAt(414, 95, 98).getState();
 	    ssign.setLine(3, "�4Blocked");
 	    ssign.update();
 	    stsign.setLine(2, "�4Closed");
@@ -92,7 +85,7 @@ import org.bukkit.Bukkit;
 	  
 	  public static void removeTeacups()
 	  {
-	    Sign ssign = (Sign)Bukkit.getWorld("world").getBlockAt(416, 95, 96).getState();
+	    Sign ssign = (Sign)Bukkit.getWorld("park").getBlockAt(416, 95, 96).getState();
 	    ssign.setLine(3, "�4Blocked");
 	    ssign.update();
 	    spawned = false;
@@ -141,10 +134,10 @@ import org.bukkit.Bukkit;
 	                if (this.timer == 15)
 	                {
 	                  cancel();
-	                  Rotation.lookAtBockNormal(MonsieurCanniballe.this, m.getPassenger());
+	                  Rotation.lookAtBockNormal(cil, m.getPassenger());
 	                }
 	              }
-	            }.runTaskTimer(Main.pl, 0L, 1L);
+	            }.runTaskTimer(main.rm(), 0L, 1L);
 	          }
 	        }
 	        if (cup == 2)
@@ -168,10 +161,10 @@ import org.bukkit.Bukkit;
 	                if (this.timer == 15)
 	                {
 	                  cancel();
-	                  Rotation.lookAtBockNormal(MonsieurCanniballe.this, m.getPassenger());
+	                  Rotation.lookAtBockNormal(cil2, m.getPassenger());
 	                }
 	              }
-	            }.runTaskTimer(Main.pl, 0L, 1L);
+	            }.runTaskTimer(main.rm(), 0L, 1L);
 	          }
 	        }
 	        if (cup == 3)
@@ -195,10 +188,10 @@ import org.bukkit.Bukkit;
 	                if (this.timer == 15)
 	                {
 	                  cancel();
-	                  Rotation.lookAtBockNormal(MonsieurCanniballe.this, m.getPassenger());
+	                  Rotation.lookAtBockNormal(cil2, m.getPassenger());
 	                }
 	              }
-	            }.runTaskTimer(Main.pl, 0L, 1L);
+	            }.runTaskTimer(main.rm(), 0L, 1L);
 	          }
 	        }
 	        if (cup == 4)
@@ -222,10 +215,10 @@ import org.bukkit.Bukkit;
 	                if (this.timer == 15)
 	                {
 	                  cancel();
-	                  Rotation.lookAtBockNormal(MonsieurCanniballe.this, m.getPassenger());
+	                  Rotation.lookAtBockNormal(cil2, m.getPassenger());
 	                }
 	              }
-	            }.runTaskTimer(Main.pl, 0L, 1L);
+	            }.runTaskTimer(main.rm(), 0L, 1L);
 	          }
 	        }
 	        if (cup == 5)
@@ -249,10 +242,10 @@ import org.bukkit.Bukkit;
 	                if (this.timer == 15)
 	                {
 	                  cancel();
-	                  Rotation.lookAtBockNormal(MonsieurCanniballe.this, m.getPassenger());
+	                  Rotation.lookAtBockNormal(cil2, m.getPassenger());
 	                }
 	              }
-	            }.runTaskTimer(Main.pl, 0L, 1L);
+	            }.runTaskTimer(main.rm(), 0L, 1L);
 	          }
 	        }
 	        cup++;
@@ -307,7 +300,7 @@ import org.bukkit.Bukkit;
 	        
 	        public void run()
 	        {
-	          Sign ssign = (Sign)Bukkit.getWorld("world").getBlockAt(416, 95, 96).getState();
+	          Sign ssign = (Sign)Bukkit.getWorld("park").getBlockAt(416, 95, 96).getState();
 	          this.timer -= 1;
 	          if (this.timer >= 0)
 	          {
@@ -324,7 +317,7 @@ import org.bukkit.Bukkit;
 	            MonsieurCanniballe.gates2.setType(Material.AIR);
 	          }
 	        }
-	      }.runTaskTimer(Main.pl, 0L, 20L);
+	      }.runTaskTimer(main.rm(), 0L, 20L);
 	      new BukkitRunnable()
 	      {
 	        public int timer = 0;
@@ -368,7 +361,7 @@ import org.bukkit.Bukkit;
 	            MonsieurCanniballe.cupspeed -= 0.125D;
 	          }
 	        }
-	      }.runTaskTimer(Main.pl, 0L, 1L);
+	      }.runTaskTimer(main.rm(), 0L, 1L);
 	      
 	      entitiesAround(cup1, stand1, 1.5D);
 	      entitiesAround(cup2, stand2, 1.5D);
@@ -392,14 +385,14 @@ import org.bukkit.Bukkit;
 	        this.timer += 1;
 	        if ((this.timer >= 15) && (this.timer <= 16))
 	        {
-	          Rotation.lookAtBockWhileMoving(((ArmorStand)MonsieurCanniballe.this.get(0)).getLocation(), s);
+	          Rotation.lookAtBockWhileMoving(((ArmorStand)list.get(0)).getLocation(), s);
 	          CraftEntity ce = (CraftEntity)s;
 	          ce.getHandle().yaw -= 90.0F;
 	        }
 	        if ((this.timer >= 16) && (this.timer <= 17))
 	        {
 	          MonsieurCanniballe.moveEntityInCircle(s, MonsieurCanniballe.center);
-	          for (ArmorStand m : MonsieurCanniballe.this)
+	          for (ArmorStand m : list)
 	          {
 	            m.setGravity(true);
 	            Rotation.setNoClip(m, true);
@@ -415,25 +408,25 @@ import org.bukkit.Bukkit;
 	          {
 	            cancel();
 	            s.remove();
-	            for (ArmorStand m : MonsieurCanniballe.this)
+	            for (ArmorStand m : list)
 	            {
 	              m.setGravity(false);
 	              Rotation.setNoClip(m, false);
 	            }
 	          }
-	          for (int i = 0; i <= MonsieurCanniballe.this.size(); i++)
+	          for (int i = 0; i <= list.size(); i++)
 	          {
-	            ArmorStand m = (ArmorStand)MonsieurCanniballe.this.get(i);
-	            Location sloc = new Location(Bukkit.getWorld("world"), s.getLocation().getX(), s.getLocation().getY(), s.getLocation().getZ(), ce.getHandle().yaw + addyaw * i, s.getLocation().getPitch());
+	            ArmorStand m = (ArmorStand)list.get(i);
+	            Location sloc = new Location(Bukkit.getWorld("park"), s.getLocation().getX(), s.getLocation().getY(), s.getLocation().getZ(), ce.getHandle().yaw + addyaw * i, s.getLocation().getPitch());
 	            Vector vector1 = sloc.getDirection().multiply(range);
 	            Location location1 = vector1.toLocation(s.getWorld()).add(sloc);
 	            location1.add(0.0D, -1.5D, 0.0D);
-	            m.setVelocity(Vectors.getFromTo(m.getLocation(), location1));
+	            m.setVelocity(me.mickerd.pardoes.core.main.helpers.Vectors.getFromTo(m.getLocation(), location1));
 	            Rotation.lookAtBockNormal(s.getLocation(), m.getPassenger());
 	          }
 	        }
 	      }
-	    }.runTaskTimer(Main.pl, 0L, 1L);
+	    }.runTaskTimer(main.rm(), 0L, 1L);
 	  }
 	  
 	  public static void moveEntityInCircle(final org.bukkit.entity.Entity ent, Location pivot)
@@ -445,7 +438,6 @@ import org.bukkit.Bukkit;
 	    double myz = ent.getLocation().getZ();
 	    final double R = Math.sqrt(Math.pow(pivx - myx, 2.0D) + Math.pow(pivz - myz, 2.0D));
 	    double angle;
-	    double angle;
 	    if (Math.asin((myx - pivx) / R) < 0.0D) {
 	      angle = 6.283185307179586D - Math.acos((myz - pivz) / R);
 	    } else {
@@ -455,7 +447,7 @@ import org.bukkit.Bukkit;
 	    {
 	      double ang;
 	      double an;
-	      final double inAn;
+	      final double inAn = 0.0;
 	      
 	      public void run()
 	      {
@@ -469,14 +461,15 @@ import org.bukkit.Bukkit;
 	        this.an = this.ang;
 	        double rad = this.an * 3.141592653589793D / 180.0D;
 	        rad += this.inAn;
-	        double xx = R + ent * Math.sin(rad);
-	        double zz = this.val$pivz + ent * Math.cos(rad);
-	        double nx = this.val$ent.getLocation().getX();
-	        double nz = this.val$ent.getLocation().getZ();
-	        double ny = this.val$ent.getLocation().getY();
-	        this.val$ent.setVelocity(new Vector(xx - nx, this.val$pivot.getY() - ny, zz - nz));
+	        double xx = +0.1;
+	        double zz =  +0.1;
+	        double nx = ent.getLocation().getX();
+	        double nz = ent.getLocation().getZ();
+	        double ny = ent.getLocation().getY();
+	        ent.setVelocity(new Vector(xx - nx, pivot.getY() - ny, zz - nz));
 	      }
-	    }.runTaskTimer(Main.pl, 1L, 1L);
+	    }.runTaskTimer
+	    (main.rm(), 1L, 1L);
 	  }
 	}
 

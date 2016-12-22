@@ -6,6 +6,7 @@ import me.mickerd.pardoes.core.commands.PC;
 import me.mickerd.pardoes.core.commands.SocialSpyPC;
 import me.mickerd.pardoes.core.commands.Verwonder;
 import me.mickerd.pardoes.core.commands.Warps;
+import me.mickerd.pardoes.core.commands.mc;
 import me.mickerd.pardoes.core.commands.title;
 import me.mickerd.pardoes.core.events.dontWarpATR;
 import me.mickerd.pardoes.core.main.helpers.Coins;
@@ -61,7 +62,10 @@ public class main extends JavaPlugin {
 		getCommand("warp").setExecutor(new Warps());
 		getCommand("socialspy").setExecutor(new SocialSpyPC());
 		getCommand("title").setExecutor(new title());
+		getCommand("mc").setExecutor(new mc());
+		getCommand("coins").setExecutor(new Coins());
 	}
+	
 
 	public void onDisable(){
 		main = null;

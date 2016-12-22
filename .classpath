@@ -2,8 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src1"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/Meander_2/Downloads/craftbukkit-1.10.2-R0.1-SNAPSHOT-latest.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Meander_2/Downloads/EssentialsX-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Meander_2/Downloads/TitleAPI-1.7.4 (6).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/server/server.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/server/plugins/Essentials-2.x-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/server/plugins/TitleAPI-1.7.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/server/plugins/ProtocolLib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

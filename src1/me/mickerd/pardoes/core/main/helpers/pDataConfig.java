@@ -52,14 +52,17 @@ public class pDataConfig {
     
     public void setMoney(int amount) {
         pDataConfig.set("Money", amount);
+        savePlayerConfig();
     }
     
     public void takeMoney(int amount) {
         pDataConfig.set("Money", getMoney() - amount);
+        savePlayerConfig();
     }
     
     public void giveMoney(int amount) {
         pDataConfig.set("Money", getMoney() + amount);
+        savePlayerConfig();
     }
     
     public FileConfiguration getPlayerConfig() {

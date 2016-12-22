@@ -14,9 +14,10 @@ public class Coins implements Listener, CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command label, String cmnd,
 			String[] args) {
-		Player p = (Player) sender;
 
-		if(p instanceof Player){
+
+		if(sender instanceof Player){
+			Player p = (Player) sender;
 			pDataConfig coins = new pDataConfig(p.getUniqueId());
 			if(args[0].equalsIgnoreCase("balans")){
 				p.sendMessage(prefix.getM("De balans van jou is: " + coins.getMoney()));
