@@ -10,7 +10,10 @@ public class startVilla implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command label, String cmnd,
 			String[] args) {
 		if(args[0].equalsIgnoreCase("start")){
-			VillaMain.start();
+			VillaMain.spawn();
+		}
+		if(args[0].equalsIgnoreCase("stop")){
+			VillaMain.stopScheduler();
 		}
 		return false;
 	}
